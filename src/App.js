@@ -16,7 +16,7 @@ function App() {
       <UserProvider>
         <BrowserRouter>
           <Routes>
-            <Route index element={<Home />} />
+            <Route index element={<SignIn />} />
             <Route path="/home" element={<Home />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<Register />} />

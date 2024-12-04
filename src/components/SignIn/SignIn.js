@@ -8,6 +8,12 @@ import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 
 function SignIn() {
+  const responseMessage = (response) => {
+    console.log(response);
+};
+const errorMessage = (error) => {
+    console.log(error);
+};
   return (
     <div className="App ">
       <div className="container ">
@@ -27,17 +33,7 @@ function SignIn() {
                     </p>
                     <div className="d-flex justify-content-center align-items-center col-12">
                       <span>
-                        <GoogleLogin
-                          onSuccess={(credentialResponse) => {
-                            const decoded = jwtDecode(
-                              credentialResponse?.credential
-                            );
-                            console.log(decoded);
-                          }}
-                          onError={() => {
-                            console.log("Login Failed");
-                          }}
-                        />
+                      <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
                       </span>
                     </div>
                     <div className="d-flex justify-content-center col-12">
